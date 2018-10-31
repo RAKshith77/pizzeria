@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { OrderPizzaComponent } from './order-pizza/order-pizza.component';
 import { BuildPizzaComponent } from './build-pizza/build-pizza.component';
 import { RouterModule } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { RouterModule } from '@angular/router'
         {path:'buildPizza',component:BuildPizzaComponent}
 
       ]
-    )
+    ),
+    HttpClientModule
 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
