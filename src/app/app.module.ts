@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { OrderPizzaComponent } from './order-pizza/order-pizza.component';
 import { BuildPizzaComponent } from './build-pizza/build-pizza.component';
 import { RouterModule } from '@angular/router'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component'
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     HomeComponent,
     OrderPizzaComponent,
-    BuildPizzaComponent
+    BuildPizzaComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

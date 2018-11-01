@@ -2,68 +2,53 @@
   order-pizza works!
 </p>
 <table class="table-bordered">
-
   <tr>
-
-    <div *ngFor = "let item of pizzaHandler; let i=index" class = "col-sm-6">
-
-    <td>
-
- 
-
-      <div class = "col-sm-4">
-
-        <b>Name: </b><br>
-
-        {{item.name}}<br>
-
-        <b>Price: </b><br>
-
-{{item.price}}<br>
-
-        
-
-          <div *ngIf="item.type=='veg'; else elseBlock">
-            <div style="height:10px;width:10px;background-color:green"></div>
-          </div>
-          <ng-template #elseBlock>
-            <div style="height:10px;width:10px;background-color:red"></div>
-          </ng-template>
-          
+    <div *ngFor="let item of pizzaHandler; let i=index" class="col-sm-6">
+      <td>
+        <div class="row">
+          <div class="col-sm-4">
+            <b>Name: </b><br>
+            {{item.name}}<br>
+            <b>Price: </b><br>
+            {{item.price}}<br>
+            <div *ngIf="item.type=='veg'; else elseBlock">
+              <div style="height:10px;width:10px;background-color:green"></div>
+            </div>
+            <ng-template #elseBlock>
+              <div style="height:10px;width:10px;background-color:red"></div>
+            </ng-template>
           </div>
 
-      <div class = "col-sm-4">
+
+          <div class="col-sm-4">
+            {{item.description}}<br>
+            <b>Ingredients: </b><br>
+            {{item.ingredients}}<br>
+            <b>Toppings: </b><br>
+            {{item.topping}}
+          </div>
 
 
+          <div class="col-sm-4">
+            <img style="height:80px;width:80px" src={{item.image}} /><br>
+            <button (click)="addToCart(item.id)" class="btn btn-success">Add To Cart</button>
+          </div>
+        </div>
 
-          {{item.description}}<br>
+        <table>
+          <div class="row">
+            <tr *ngFor="let x of ingHandler; let i=index" class="col-sm-2">
+                <input type="checkbox" (click)="calculateIngredients($event.target.checked,item.id,x.id)"/>
+              {{x.tname}}
+            </tr>
+          </div>
+        </table>
+    
 
-          <b>Ingredients: </b><br>
 
-          {{item.ingredients}}<br>
-
-          <b>Toppings: </b><br>
-
-          {{item.topping}}
-
-      </div>
-
-      <div class = "col-sm-4">
-
-          <img style="height:80px;width:80px" src={{item.image}}/><br>
-
-          <button (click)="addToCart(item.id)" class = "btn btn-success">Add To Cart</button>
-
-      </div>
 
     </td>
-
-  </div>
-
-  
-
+    </div>
   </tr>
-
 </table>
 <button (click)='get()'>get</button>
-
