@@ -1,3 +1,19 @@
 <p>
   cart works!
 </p>
+<div class="row" *ngFor="let item of cartItems">
+  <div class="col-sm-4">
+   <img src="{{item.image}}" style="height:100px; width:100px">
+  </div>
+  <div class="col-sm-4">
+    <b>Price:</b> &nbsp;{{item.price}}<br/>
+    <b>Type:</b> &nbsp;{{item.type}}<br/>
+    <b>Topping:</b>&nbsp;{{item.topping}}<br/>
+    <div *ngIf="item.addOns == NULL"><b>No Extra Topping</b></div>
+    <div *ngIf="item.addOns != NULL"><b>Extra Toppings:</b> &nbsp;{{item.addOns}}</div>
+    
+  </div>
+  <div class="col-sm-4">
+    <button (click)="removeFromCart(item.id)" class="btn btn-danger" onclick="window.location.reload()">Remove your pizza</button><br/>
+  </div> <br/>
+</div>

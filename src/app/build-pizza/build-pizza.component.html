@@ -1,3 +1,33 @@
 <p>
   build-pizza works!
 </p>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <table class="table table-bordered">
+       <tr *ngFor="let item of ingredients; let i = index">
+       <td><img src={{item.image}} style="height: 120px"/></td>
+       <td>{{item.tname}} &nbsp;&nbsp;&nbsp;&#8377;{{item.price}}</td>
+       <td>
+         <input type="checkbox" (click)="TotalPrice($event.target.checked,item.price,item.tname)"/>&nbsp;&nbsp;Add
+       </td>
+       </tr>
+      </table>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-4"><label>Total Cost: {{total}}</label></div>
+    <div class="col-sm-5"></div>
+  </div>
+
+  <div class="row">
+   <div class="col-sm-5"></div>
+   <div class="col-sm-2"><button id="b1"(click)="addTopping(pizzaid,topping,total)">Add Toppings</button></div>
+   <div class="col-sm-5"></div>
+  </div>
+</div>

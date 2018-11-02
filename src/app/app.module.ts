@@ -25,7 +25,8 @@ import { CartComponent } from './cart/cart.component'
         {path:'',component:HomeComponent},
         {path:'home',component:HomeComponent},
         {path:'orderPizza',component:OrderPizzaComponent},
-        {path:'buildPizza',component:BuildPizzaComponent}
+        {path:'buildPizza',component:BuildPizzaComponent},
+        {path:'cart',component:CartComponent}
 
       ]
     ),

@@ -31,18 +31,19 @@
 
           <div class="col-sm-4">
             <img style="height:80px;width:80px" src={{item.image}} /><br>
-            <button (click)="addToCart(item.id)" class="btn btn-success">Add To Cart</button>
+            <button class="btn btn-success" (click)="addToCart(item.id)">Add to cart</button><br/><br/>
+        <button class="btn btn-primary" (click)="buildPage(item.id)">Customize</button>
           </div>
         </div>
 
-        <table>
+        <!-- <table>
           <div class="row">
             <tr *ngFor="let x of ingHandler; let i=index" class="col-sm-2">
                 <input type="checkbox" (click)="calculateIngredients($event.target.checked,item.id,x.id)"/>
               {{x.tname}}
             </tr>
           </div>
-        </table>
+        </table> -->
     
 
 
@@ -51,4 +52,3 @@
     </div>
   </tr>
 </table>
-<button (click)='get()'>get</button>
